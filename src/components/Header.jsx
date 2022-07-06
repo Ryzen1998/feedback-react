@@ -12,6 +12,6 @@ function Header(props) {
   )
 }
 Header.defaultProps={
-  text:'ashwin',
+  text:'Feedback-app',
 };
 export default Header
