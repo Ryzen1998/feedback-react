@@ -16,7 +16,8 @@ function FeedbackStats(props) {
     </div>
   )
 }
-FeedbackStats.prototypes={
+// eslint-disable-next-line react/no-typos
+FeedbackStats.PropTypes={
   feedback:PropTypes.array.isRequired,
 }
 
