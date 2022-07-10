@@ -8,6 +8,7 @@ import AboutPage from './components/pages/AboutPage';
 import AboutIconLink from './components/AboutIconLink';
 import {v4 as uuidv4} from 'uuid'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import {feedbackProvider as FeedbackProvider} from './context/Context';
 
 
 const App =()=>{
@@ -22,14 +23,14 @@ const App =()=>{
     };
     const addFeedback=(newFeedback)=>{
 
-newFeedback.id = uuidv4();
-setFeedback([newFeedback,...feedback])
+        newFeedback.id = uuidv4();
+        setFeedback([newFeedback,...feedback])
     }
 
 
 
     return(
-       
+       <FeedbackProvider>
         <Router>
         <Header  />
         <div className='container'>
@@ -37,9 +38,9 @@ setFeedback([newFeedback,...feedback])
         <Routes>
         <Route exact path='/' element={
             <>
-            <FeedbackForm handleAdd={addFeedback}/>
-        <FeedbackStats feedback={feedback}/>
-        <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+        <FeedbackForm handleAdd={addFeedback}/>
+        <FeedbackStats />
+        <FeedbackList  handleDelete={deleteFeedback}/>
         <AboutIconLink/>
             </>
         }>
@@ -50,7 +51,7 @@ setFeedback([newFeedback,...feedback])
      
         </div>
         </Router>
-        
+        </FeedbackProvider>
     );
 };
 
