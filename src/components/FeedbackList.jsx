@@ -18,7 +18,7 @@ return(<p>No feedback yet</p>)
       <AnimatePresence>
         {feedback.map((feedback,index)=>(
           <motion.div key={index} initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
-<FeedbackItem key={index} item={feedback.text} id={feedback.id} rating={feedback.rating} handleDelete={handleDelete}/>
+<FeedbackItem key={index} item={feedback.text} id={feedback.id} rating={feedback.rating} />
 </motion.div>
         ))}
       </AnimatePresence>
