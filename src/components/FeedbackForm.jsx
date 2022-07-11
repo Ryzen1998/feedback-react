@@ -26,6 +26,7 @@ function FeedbackForm() {
     },[feedbackEdit])
    
     const handleTextChange =(e)=>{
+     
       if(text==='' ){
         setBtnDisabled(true)
         setMessage(null)
@@ -41,7 +42,7 @@ function FeedbackForm() {
         setBtnDisabled(false)
       }
 
-       setText(e.target.value);
+      setText(e.target.value);
 
     }
 
